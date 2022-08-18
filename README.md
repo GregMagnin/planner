@@ -15,6 +15,15 @@ Les évènements sont enregistrés sur un agenda. Plusieurs agendas peuvent êtr
 ### Planning
 Le planning suivant a été spécifié :
 
+* Initialisation du projet et maquettage : 2 jours
+* Intégration des maquettes : 3 jours
+* Modélisation et intégration de la base : 1 jour
+* Développement de la partie agenda : 2 jours
+* Développement de la partie évènements : 3 jours
+* Développement de la partie utilisateur : 2 jours
+
+Temps global : 13 jours
+
 ## Spécifications fonctionnelles
 
 ### Utilisateurs
