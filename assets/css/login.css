@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+.containerlogin {
+    width: 470px;
+    height: 400px;
+    margin: auto;
+    margin-top: 30px;
+    border: solid black 2px;
+    border-radius: 15px;
+}
+.loginBox {
+    width: 470px;
+    height: 380px;
+    margin: auto;   
+    box-sizing: 2px solid black;
+}
+
+.loginTitle {
+    display: flex;
+    height: 100px;
+    width: 466px;
+    justify-content: center;
+    align-items: baseline;
+    font-family: 'Lobster', sans-serif;
+    background-color: #7cc0F3;
+    font-size: 70px;
+    border-radius: 15px 15px 0 0;
+    
+}
+
+.loginTitle p {
+    margin-bottom: 3%;
+    text-decoration: underline;
+}
+
+span {
+    display: block;
+    width: 99.2%;
+    border: 2px solid black;
+}
+
+form { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 50px;
+}
+
+input {
+    border-radius: 10px;
+    border: solid 2px black;
+    width: 300px;
+    height: 50px;
+}
+
+
+::placeholder {
+    color: black;
+    font-family: 'Josefin sans', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+.loginForm p {
+    text-align: center;
+    font-family: 'Josefin sans', sans-serif;
+    margin-top: 30px;
+}
+
+.loginForm a {
+    text-decoration: underline;
+}
