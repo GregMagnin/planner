@@ -66,6 +66,16 @@ input {
     height: 50px;
 }
 
+input[type="text"] {
+    font-size: 20px;
+    font-family: 'Josefin sans', sans-serif;
+}
+
+input[type="pass"] {
+    font-size: 20px;
+    font-family: 'Josefin sans', sans-serif;
+}
+
 
 ::placeholder {
     color: black;
