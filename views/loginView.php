@@ -9,6 +9,14 @@
 <body>
     <!-- navbar -->
 
+    <header>
+    <div class="header">
+        <div class="icon-website">
+            <img src="../assets/img/website.png" alt="Logo du site">
+        </div>
+    </div> 
+</header>
+    
     <!-- navbar -->
 
     <!-- formulaire -->

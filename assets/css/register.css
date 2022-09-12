@@ -97,3 +97,19 @@ input[type="pass"] {
 .registerForm a {
     text-decoration: underline;
 }
+
+.header {
+    background-color: #7cc0f3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.header img {
+    height: 60px;
+}
