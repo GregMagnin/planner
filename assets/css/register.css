@@ -66,12 +66,27 @@ input {
     height: 50px;
 }
 
+input[type="text"] {
+    font-size: 20px;
+    font-family: 'Josefin sans', sans-serif;
+}
+
+input[type="mail"] {
+    font-size: 20px;
+    font-family: 'Josefin sans', sans-serif;
+}
+
+input[type="pass"] {
+    font-size: 20px;
+    font-family: 'Josefin sans', sans-serif;
+}
 
 ::placeholder {
     color: black;
     font-family: 'Josefin sans', sans-serif;
     font-size: 20px;
     text-align: center;
+    
 }
 
 .registerForm {
@@ -81,4 +96,20 @@ input {
 
 .registerForm a {
     text-decoration: underline;
+}
+
+.header {
+    background-color: #7cc0f3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.header img {
+    height: 60px;
 }
