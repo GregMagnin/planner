@@ -82,7 +82,7 @@ input[type="pass"] {
 }
 
 ::placeholder {
-    color: black;
+    color: grey;
     font-family: 'Josefin sans', sans-serif;
     font-size: 20px;
     text-align: center;

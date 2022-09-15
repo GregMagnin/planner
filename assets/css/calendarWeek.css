@@ -1,3 +1,7 @@
+body {
+  position: relative;
+}
+
 .parent {
     display: grid;
     grid-template-columns: 1fr 25fr;
@@ -60,7 +64,7 @@
     position: absolute;
     height: 100%;
     z-index: 0;
-    left: 320px;
+    left: 450px;
   }
 
   .vlWed {
@@ -70,7 +74,7 @@
     position: absolute;
     height: 100%;
     z-index: 0;
-    left: 480px;
+    left: 720px;
   }
 
   .vlThu {
@@ -80,5 +84,25 @@
     position: absolute;
     height: 100%;
     z-index: 0;
-    left: 625px;
+    left: 970px;
+  }
+
+  .vlFri {
+    border-left: 1px solid grey;
+    height: 50px;
+    margin-bottom: 0;
+    position: absolute;
+    height: 100%;
+    z-index: 0;
+    left: 1255px;
+  }
+
+  .vlSat {
+    border-left: 1px solid grey;
+    height: 50px;
+    margin-bottom: 0;
+    position: absolute;
+    height: 100%;
+    z-index: 0;
+    left: 1525px;
   }

@@ -38,13 +38,13 @@ require_once 'db.php';
     //     )"
     //  ];
 
-     $queries = [
-        "CREATE TABLE agenda_user (
-          agenda_ID INT NOT NULL,
-          user_ID INT NOT NULL, 
-          PRIMARY KEY (agenda_ID, user_ID)     
-           )"
-        ];
+    //  $queries = [
+    //     "CREATE TABLE agenda_user (
+    //       agenda_ID INT NOT NULL,
+    //       user_ID INT NOT NULL, 
+    //       PRIMARY KEY (agenda_ID, user_ID)     
+    //        )"
+    //     ];
 
 
 
