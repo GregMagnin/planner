@@ -56,7 +56,7 @@ form {
     align-items: center;
     justify-content: space-between;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 input {
@@ -112,4 +112,8 @@ input[type="pass"] {
 
 .header img {
     height: 60px;
+}
+
+.alreadyRegistered {
+    margin-top: 8px;
 }
