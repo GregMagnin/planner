@@ -33,11 +33,12 @@
       </span>
       <div class="loginForm">
         <form action="../models/loginModel.php" method="post">
-          <input type="text" id="username" name="user" required="required" placeholder="Nom d'utilisateur" <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?> value="<?php echo $username; ?>" />
+          <input type="text" id="username" name="user" required="required" placeholder="Nom d'utilisateur"/>
           <br />
 
           <input type="pass" id="password" name="psw" required="required" placeholder="Mot de passe" />
           <br />
+          <input type="submit">
         </form>
         <p>Pas de compte ? Inscrivez vous <a href="registerView.php">ici</a>.</p>
       </div>

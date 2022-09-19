@@ -4,12 +4,12 @@ session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: calendardayView.php");
+    header("location: ../views/calendardayView.php");
     exit;
 }
  
 // Include config file
-include "../database/config.php";
+include "../database/db.php";
  
 // Define variables and initialize with empty values
 $username = $password = "";
@@ -19,30 +19,30 @@ $username_err = $password_err = $login_err = "";
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Check if username is empty
-    if(empty(trim($_POST["username"]))){
+    if(empty(trim($_POST["user"]))){
         $username_err = "Entrez un nom d'utilisateur";
     } else {
-        $username = trim($_POST["username"]);
+        $username = trim($_POST["user"]);
     }
      
     // Check if password is empty
-    if(empty(trim($_POST["password"]))){
+    if(empty(trim($_POST["psw"]))){
         $password_err = "Please enter your password.";
     } else{
-        $password = trim($_POST["password"]);
+        $password = trim($_POST["psw"]);
     }
     
     // Validate credentials
-    if(empty($username_err) && empty($email_err) && empty($password_err)){
+    if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
         $sql = "SELECT id, username, password FROM users WHERE username = :username";
         
-        if($stmt = $pdo->prepare($sql)){
+        if($stmt = $connection->prepare($sql)){
             // Bind variables to the prepared statement as parameters
             $stmt->bindParam(":username", $param_username, PDO::PARAM_STR);
             
             // Set parameters
-            $param_username = trim($_POST["username"]);
+            $param_username = trim($_POST["user"]);
             
             // Attempt to execute the prepared statement
             if($stmt->execute()){
@@ -50,8 +50,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if($stmt->rowCount() == 1){
                     if($row = $stmt->fetch()){
                         $id = $row["id"];
-                        $username = $row["username"];
-                        $hashed_password = $row["password"];
+                        $username = $row["user"];
+                        $hashed_password = $row["psw"];
                         if(password_verify($password, $hashed_password)){
                             // Password is correct, so start a new session
                             session_start();
@@ -59,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
-                            $_SESSION["username"] = $username;                            
+                            $_SESSION["user"] = $username;                            
                             
                             // Redirect user to welcome page
                             header("location: ../views/calendardayView.php");
@@ -82,6 +82,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Close connection
-    unset($pdo);
+    unset($connection);
 }
 ?>

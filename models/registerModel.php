@@ -1,55 +1,55 @@
 <?php
-   
-    include "../database/config.php"; //Inclusion de la DB
+
+    include "../database/db.php"; //Inclusion de la DB
      
    
     $username = $email = $password = $confirm_password = ""; //déclaration des variables
     $username_err = $email_err = $password_err = $confirm_password_err = ""; //déclaration des variables
      
+  
+    if($_SERVER["REQUEST_METHOD"] == "POST"){ //Récupération du formulaire
     
-    if($_SERVER["REQUEST_METHOD"] == "post"){ //Récupération du formulaire
-
         
-        if(empty(trim($_POST["username"]))) { // on vérifie si le nom d'utilisateur est vide
+        if(empty(trim($_POST["user"]))) { // on vérifie si le nom d'utilisateur est vide
             $username_err = "Entrez un nom d'utilisateur"; // on vérifie si le nom d'utilisateur est vide
         } else{ //si le nom d'utilisateur n'est pas vide alors
             
             $sql = "SELECT id FROM users WHERE username= :username"; //on récupère l'id de username dans la table users (:?)
-
-            if($stmt = $pdo->prepare($sql)){ //préparation de la requête
+            if($stmt = $connection->prepare($sql)){ //préparation de la requête
                 $stmt->bindParam(":username", $param_username, PDO::PARAM_STR); //?
-                $param_username = trim($_POST["username"]); //?
+                $param_username = trim($_POST["user"]); //?
 
                 if($stmt->execute()){ //on execute la requête
-                   $username = trim($_POST["username"]); //?
+                   $username = trim($_POST["user"]); //?
                 } else {
                     echo "Quelque chose s'est mal passé (utilsateur)"; //message d'erreur si cela ne marche pas
                 }
-
+                    
                 unset($stmt);
             }
         } 
+    }
 
       
-        if(empty(trim($_POST["email"]))){  // on vérifie si l'email est vide
-            $email_err = "Entrez un mot de passe"; // on vérifie si l'email est vide
+        if(empty(trim($_POST["description"]))){  // on vérifie si l'email est vide
+            $email_err = "Entrez un email"; // on vérifie si l'email est vide
         } else{
            
             $sql = "SELECT id FROM users WHERE email = :email"; //on récupère l'id des emails dans la table users (:?)
             
-            if($stmt = $pdo->prepare($sql)){ //préparation de la requête
+            if($stmt = $connection->prepare($sql)){ //préparation de la requête
                 
                 $stmt->bindParam(":email", $param_email, PDO::PARAM_STR); //?
                 
                
-                $param_email = trim($_POST["email"]); //?
+                $param_email = trim($_POST["description"]); //?
                 
                 
-                if($stmt->execute()){
-                    if($stmt->rowCount() == 1){
-                        $email_err = "Cet email est déjà pris";
+                if($stmt->execute()){ //execution de la requête
+                    if($stmt->rowCount() == 1){ //vérification si l'adresse est déjà utilisée
+                        $email_err = "Cet email est déjà pris"; //message d'erreur si l'adresse est déjà utilisée
                     } else{
-                        $email = trim($_POST["email"]);
+                        $email = trim($_POST["description"]); //?
                     }
                 } else{
                     echo "Quelque chose s'est mal passé (email)";
@@ -61,12 +61,12 @@
         }
         
        
-        if(empty(trim($_POST["password"]))){
+        if(empty(trim($_POST["psw"]))){
             $password_err = "Entrez un mot de passe";     
-        } elseif(strlen(trim($_POST["password"])) < 6){
+        } elseif(strlen(trim($_POST["psw"])) < 6){
             $password_err = "Le mot de passe doit avoir 6 charactères.";
         } else{
-            $password = trim($_POST["password"]);
+            $password = trim($_POST["psw"]);
         }
         
         
@@ -78,14 +78,15 @@
                 $confirm_password_err = "Les mots de passes de correspondent pas";
             }
         }
-        
+
        
         if(empty($username_err) && empty($email_err) && empty($password_err) && empty($confirm_password_err)){
             
-            
             $sql = "INSERT INTO users (username, email, password) VALUES (:username, :email, :password)";
-             
-            if($stmt = $pdo->prepare($sql)){
+            }  else 
+           
+            var_dump('rien ne marche');
+             if($stmt = $connection->prepare($sql)){
                 
                 $stmt->bindParam(":username", $param_username, PDO::PARAM_STR);
                 $stmt->bindParam(":email", $param_email, PDO::PARAM_STR);
@@ -96,20 +97,18 @@
                 $param_email = $email;
                 $param_password = password_hash($password, PASSWORD_DEFAULT); 
                 
-              
+           
+                
                 if($stmt->execute()){
-                    
                     header("location: ../views/loginView.php");
                 } else{
-                    echo "Quelque chose s'est mal passé (redirection)";
+                    var_dump($username, $email, $param_password);
                 }
-    
-            
                 unset($stmt);
+            
+        
             }
-        }
         
-        
-        unset($pdo);
-    }
+        unset($connection);
+    
     ?>
