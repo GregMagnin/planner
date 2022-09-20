@@ -1,0 +1,366 @@
+/*//////////////////// Month ///////////*/
+
+.content .month {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-auto-flow: row;
+    text-align: center;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    align-items: flex-end;
+    margin-top: -1%;
+}
+
+.content .month div {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    padding: auto;
+    height: 16vh;
+    width: auto;
+}
+
+.content .month span {
+    border: none;
+}
+
+/*//////////////////////Day//////////////*/
+.parent {
+    display: grid;
+    grid-template-columns: 1fr 25fr;
+    grid-template-rows: repeat(24, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 50px;
+    margin-left: 2%;
+}
+
+.div1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.div2 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.div3 {
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+.div4 {
+    grid-area: 4 / 1 / 5 / 2;
+}
+
+.div5 {
+    grid-area: 5 / 1 / 6 / 2;
+}
+
+.div6 {
+    grid-area: 6 / 1 / 7 / 2;
+}
+
+.div7 {
+    grid-area: 7 / 1 / 8 / 2;
+}
+
+.div8 {
+    grid-area: 8 / 1 / 9 / 2;
+}
+
+.div9 {
+    grid-area: 9 / 1 / 10 / 2;
+}
+
+.div10 {
+    grid-area: 10 / 1 / 11 / 2;
+}
+
+.div11 {
+    grid-area: 11 / 1 / 12 / 2;
+}
+
+.div12 {
+    grid-area: 12 / 1 / 13 / 2;
+}
+
+.div13 {
+    grid-area: 13 / 1 / 14 / 2;
+}
+
+.div14 {
+    grid-area: 14 / 1 / 15 / 2;
+}
+
+.div15 {
+    grid-area: 15 / 1 / 16 / 2;
+}
+
+.div16 {
+    grid-area: 16 / 1 / 17 / 2;
+}
+
+.div17 {
+    grid-area: 17 / 1 / 18 / 2;
+}
+
+.div18 {
+    grid-area: 18 / 1 / 19 / 2;
+}
+
+.div19 {
+    grid-area: 19 / 1 / 20 / 2;
+}
+
+.div20 {
+    grid-area: 20 / 1 / 21 / 2;
+}
+
+.div21 {
+    grid-area: 21 / 1 / 22 / 2;
+}
+
+.div22 {
+    grid-area: 22 / 1 / 23 / 2;
+}
+
+.div23 {
+    grid-area: 23 / 1 / 24 / 2;
+}
+
+.div24 {
+    grid-area: 24 / 1 / 25 / 2;
+}
+
+.content .day {
+    font-family: "Lobster", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+}
+
+.numberday {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: #7cc0f3;
+    border: 3px solid #000;
+    color: #000;
+    font-size: 40px;
+    font-weight: bold;
+
+}
+
+.containernumber {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/*//////////////////////Week////////////////////////////////////////////////*/
+
+.content.parent {
+    display: grid;
+    grid-template-columns: 1fr 25fr;
+    grid-template-rows: repeat(24, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 50px;
+    margin-top: 0%;
+    position: relative;
+}
+
+.div1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.div2 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.div3 {
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+.div4 {
+    grid-area: 4 / 1 / 5 / 2;
+}
+
+.div5 {
+    grid-area: 5 / 1 / 6 / 2;
+}
+
+.div6 {
+    grid-area: 6 / 1 / 7 / 2;
+}
+
+.div7 {
+    grid-area: 7 / 1 / 8 / 2;
+}
+
+.div8 {
+    grid-area: 8 / 1 / 9 / 2;
+}
+
+.div9 {
+    grid-area: 9 / 1 / 10 / 2;
+}
+
+.div10 {
+    grid-area: 10 / 1 / 11 / 2;
+}
+
+.div11 {
+    grid-area: 11 / 1 / 12 / 2;
+}
+
+.div12 {
+    grid-area: 12 / 1 / 13 / 2;
+}
+
+.div13 {
+    grid-area: 13 / 1 / 14 / 2;
+}
+
+.div14 {
+    grid-area: 14 / 1 / 15 / 2;
+}
+
+.div15 {
+    grid-area: 15 / 1 / 16 / 2;
+}
+
+.div16 {
+    grid-area: 16 / 1 / 17 / 2;
+}
+
+.div17 {
+    grid-area: 17 / 1 / 18 / 2;
+}
+
+.div18 {
+    grid-area: 18 / 1 / 19 / 2;
+}
+
+.div19 {
+    grid-area: 19 / 1 / 20 / 2;
+}
+
+.div20 {
+    grid-area: 20 / 1 / 21 / 2;
+}
+
+.div21 {
+    grid-area: 21 / 1 / 22 / 2;
+}
+
+.div22 {
+    grid-area: 22 / 1 / 23 / 2;
+}
+
+.div23 {
+    grid-area: 23 / 1 / 24 / 2;
+}
+
+.div24 {
+    grid-area: 24 / 1 / 25 / 2;
+}
+
+
+
+.content .days {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-around;
+    z-index: 2;
+}
+
+.vlMon {
+    border-left: 1px solid grey;
+    height: 50px;
+    margin-bottom: 0;
+    position: absolute;
+    height: 100%;
+    z-index: 0;
+    left: 10%;
+}
+
+.vlTue {
+    border-left: 1px solid grey;
+    height: 50px;
+    margin-bottom: 0;
+    position: absolute;
+    height: 100%;
+    z-index: 0;
+    left: 450px;
+}
+
+.vlWed {
+    border-left: 1px solid grey;
+    height: 50px;
+    margin-bottom: 0;
+    position: absolute;
+    height: 100%;
+    z-index: 0;
+    left: 720px;
+}
+
+.vlThu {
+    border-left: 1px solid grey;
+    height: 50px;
+    margin-bottom: 0;
+    position: absolute;
+    height: 100%;
+    z-index: 0;
+    left: 970px;
+}
+
+.vlFri {
+    border-left: 1px solid grey;
+    height: 50px;
+    margin-bottom: 0;
+    position: absolute;
+    height: 100%;
+    z-index: 0;
+    left: 1255px;
+}
+
+.vlSat {
+    border-left: 1px solid grey;
+    height: 50px;
+    margin-bottom: 0;
+    position: absolute;
+    height: 100%;
+    z-index: 0;
+    left: 1525px;
+}
+
+.content .agenda {
+    margin-top: 70px;
+    height: fit-content;
+    width: 100%;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 8px 0 4px 0 lightgray;
+}
+
+.content .agenda>* {
+    margin: 15px 15px 15px 15px;
+}
+
+/* .content .agenda-view {
+    background: linear-gradient(to right,rgba(0,0,0,0),#ffbee2 20%,#7CC0F3 80%);
+    border-radius: 5px;
+    box-shadow: none;
+    border: solid 1px black;
+    width: auto;
+    height: 24px;
+    padding: 0 5px 0 8px;
+    cursor: pointer;
+} */
+
+

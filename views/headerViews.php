@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,7 +58,7 @@
             </div>
 
 
-    <div class="logo-right">
+            <div class="logo-right">
                 <div class="icon-events"><a href="#openModal">
                         <button class="new" for="modal-content">
                             <img src="../assets/img/events.png">
@@ -68,12 +69,12 @@
                     <div>
                         <header>Créer un évènement</header>
                         <a href="#close" title="Fermer" class="close">X</a>
-                        <div class="modal-content">
+                        <form class="modal-content" method="post">
                             <span>
                                 <hr>
                             </span>
                             <title>Créer un évènement</title>
-                            <input type="text" placeholder="Nom de l'évènement" reset>
+                            <input type="text" placeholder="Nom de l'évènement" reset name="name">
                             <br>
                             <label for="category">
                                 <select name="category" id="category">
@@ -85,13 +86,13 @@
                             </label>
                             <section class="date">
                                 <div><img src="/assets/img/clock.png">
-                                    <input type="date" name="" value="2022-09-07" min="2022-01-01" max="2022-12-31">
+                                    <input type="date" name="date" value="2022-09-07" min="2022-01-01" max="2022-12-31">
                                 </div>
                                 <div class="centercheckbox">
-                                    <input id="allday" type="checkbox">Journée
+                                    <input id="allday" type="checkbox" name="hourday">Journée
                                     <div class="day">
-                                        <input class="" type="time" name="" value="14:12">
-                                        <input class="" type="time" name="" value="15:12">
+                                        <input class="" type="time" name="hourstart" value="14:12">
+                                        <input class="" type="time" name="hourend" value="15:12">
                                     </div>
                                 </div>
                             </section>
@@ -110,21 +111,21 @@
                                     </select>
                                 </div>
                             </section>
-                            <div class="description" placeholder="description">Ajoutez une description</div>
-                            <textarea name="" cols="60" rows="10"></textarea>
-                            <button class="event">Enregistrer</button>
-                        </div>
+                            <div class="">Ajoutez une description</div>
+                            <textarea name="description" cols="60" rows="10"></textarea>
+                            <button class="event" type="submit" name="submit">Enregistrer</button>
+                        </form>
                     </div>
                 </div>
 
 
-                    <div class="icon-calendar"><a href="#openModal2">
-                            <button class="new" for="modal-content">
-                                <img src="../assets/img/calendar.png">
-                            </button></a>
-                    </div>
+                <div class="icon-calendar"><a href="#openModal2">
+                        <button class="new" for="modal-content">
+                            <img src="../assets/img/calendar.png">
+                        </button></a>
+                </div>
 
-                    <div id="openModal2" class="modalDialog">
+                <div id="openModal2" class="modalDialog">
                     <div>
                         <header>Créer un agenda</header>
                         <a href="#close" title="Fermer" class="close">X</a>
@@ -132,7 +133,7 @@
                             <span>
                                 <hr>
                             </span>
-                        <title>Créer un agenda</title>
+                            <title>Créer un agenda</title>
                             <input type="text" placeholder="Nom de l'agenda" reset>
                             <br>
                             <div class="info-calendar">
@@ -143,16 +144,16 @@
                                     </div>
                                 </section>
                                 <section class="reminder2">
-                                    
+
                                     <div class="radio-button">
                                         <div>
-                                        <input type="radio" id="male" name="gender">
-                                        <label for="male">Public</label>
+                                            <input type="radio" id="male" name="gender">
+                                            <label for="male">Public</label>
                                         </div>
 
                                         <div class="radio-space">
-                                        <input type="radio" id="female" name="gender">
-                                        <label for="female">Private</label>
+                                            <input type="radio" id="female" name="gender">
+                                            <label for="female">Private</label>
                                         </div>
                                     </div>
                                 </section>
@@ -179,4 +180,5 @@
 
 <body>
 </body>
+
 </html>
