@@ -16,3 +16,6 @@
 //         require_once controllers('error');
 // }
 
+require_once 'controllers/eventController.php';
+
+?>

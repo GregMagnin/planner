@@ -10,7 +10,6 @@
 </head>
 
 <body>
-    <section class="content">
         <div class="month" id="month">
             <span>Lundi</span>
             <span>Mardi</span>
@@ -27,8 +26,7 @@
                 } else echo "<div>$i</div>";
             }
             ?>
-        </div>
-    </section>
+        </div> 
 </body>
 
 </html>

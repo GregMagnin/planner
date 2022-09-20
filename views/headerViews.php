@@ -44,15 +44,15 @@
         <div class="icon-right">
 
             <div class="dropdown-header">
-                <div class="day">Jour</div>
+                <div class="day">jour</div>
 
                 <div class="div-button">
                     <button class="button"><img src="../assets/img/down-arrow.png">
                     </button>
                     <div class="dropdown-content">
-                        <a href="#">Jour</a>
-                        <a href="#">Semaine</a>
-                        <a href="#">Mois</a>
+                        <a href="calendarDayView.php?view=day">Jour</a>
+                        <a href="calendarWeekView.php?view=week">Semaine</a>
+                        <a href="calendarMonthView.php?view=month">Mois</a>
                     </div>
                 </div>
             </div>
@@ -69,7 +69,7 @@
                     <div>
                         <header>Créer un évènement</header>
                         <a href="#close" title="Fermer" class="close">X</a>
-                        <form class="modal-content" method="post">
+                        <form class="modal-content" method="post" action="../controllers/eventController.php">
                             <span>
                                 <hr>
                             </span>
@@ -114,6 +114,7 @@
                             <div class="">Ajoutez une description</div>
                             <textarea name="description" cols="60" rows="10"></textarea>
                             <button class="event" type="submit" name="submit">Enregistrer</button>
+                            <? if(isset ($alert)) echo $alert; ?>
                         </form>
                     </div>
                 </div>
