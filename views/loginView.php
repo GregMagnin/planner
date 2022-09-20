@@ -36,9 +36,9 @@
           <input type="text" id="username" name="user" required="required" placeholder="Nom d'utilisateur"/>
           <br />
 
-          <input type="pass" id="password" name="psw" required="required" placeholder="Mot de passe" />
+          <input type="password" id="password" name="psw" required="required" placeholder="Mot de passe" />
           <br />
-          <input type="submit">
+          <input type="submit" class="submit">
         </form>
         <p>Pas de compte ? Inscrivez vous <a href="registerView.php">ici</a>.</p>
       </div>

@@ -31,10 +31,11 @@
     }
 
       
-        if(empty(trim($_POST["description"]))){  // on vérifie si l'email est vide
+        if(empty(trim($_POST["mail"]))){  // on vérifie si l'email est vide
+            
             $email_err = "Entrez un email"; // on vérifie si l'email est vide
         } else{
-           
+            
             $sql = "SELECT id FROM users WHERE email = :email"; //on récupère l'id des emails dans la table users (:?)
             
             if($stmt = $connection->prepare($sql)){ //préparation de la requête
@@ -42,14 +43,14 @@
                 $stmt->bindParam(":email", $param_email, PDO::PARAM_STR); //?
                 
                
-                $param_email = trim($_POST["description"]); //?
+                $param_email = trim($_POST["mail"]); //?
                 
                 
                 if($stmt->execute()){ //execution de la requête
                     if($stmt->rowCount() == 1){ //vérification si l'adresse est déjà utilisée
                         $email_err = "Cet email est déjà pris"; //message d'erreur si l'adresse est déjà utilisée
                     } else{
-                        $email = trim($_POST["description"]); //?
+                        $email = trim($_POST["mail"]); //?
                     }
                 } else{
                     echo "Quelque chose s'est mal passé (email)";
@@ -81,11 +82,11 @@
 
        
         if(empty($username_err) && empty($email_err) && empty($password_err) && empty($confirm_password_err)){
-            
             $sql = "INSERT INTO users (username, email, password) VALUES (:username, :email, :password)";
+            
             }  else 
-           
-            var_dump('rien ne marche');
+            header("location: ../views/errorView.php");
+            
              if($stmt = $connection->prepare($sql)){
                 
                 $stmt->bindParam(":username", $param_username, PDO::PARAM_STR);
@@ -102,7 +103,7 @@
                 if($stmt->execute()){
                     header("location: ../views/loginView.php");
                 } else{
-                    var_dump($username, $email, $param_password);
+                    header("location: ../views/errorView.php");
                 }
                 unset($stmt);
             
