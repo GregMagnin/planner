@@ -78,10 +78,10 @@ input[type="pass"] {
 
 
 ::placeholder {
-    color: black;
+    color: grey;
     font-family: 'Josefin sans', sans-serif;
     font-size: 20px;
-    text-align: center;
+    
 }
 
 .loginForm p {
@@ -108,4 +108,9 @@ input[type="pass"] {
 
 .header img {
     height: 60px;
+}
+
+.submit {
+    margin-top: 10px;
+    background:linear-gradient(to right,rgba(0,0,0,0),#FE85C8 20%,#7CC0F3 80%);
 }

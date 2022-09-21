@@ -56,14 +56,14 @@ form {
     align-items: center;
     justify-content: space-between;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 input {
     border-radius: 10px;
     border: solid 2px black;
     width: 300px;
-    height: 50px;
+    height: 40px;
 }
 
 input[type="text"] {
@@ -82,7 +82,7 @@ input[type="pass"] {
 }
 
 ::placeholder {
-    color: black;
+    color: grey;
     font-family: 'Josefin sans', sans-serif;
     font-size: 20px;
     text-align: center;
@@ -113,3 +113,13 @@ input[type="pass"] {
 .header img {
     height: 60px;
 }
+
+.alreadyRegistered {
+    margin-top: 8px;
+}
+
+.submit {
+    margin-top: 10px;
+    background:linear-gradient(to right,rgba(0,0,0,0),#FE85C8 20%,#7CC0F3 80%);
+}
+
