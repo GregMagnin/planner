@@ -8,12 +8,52 @@
     <title>header</title>
 </head>
 
+
+<body>
+
 <header>
     <div class="header">
         <div class="icon-left">
 
             <div class="icon-burger">
-                <img src="../assets/img/burger.png" alt="Logo menu">
+                <div class="header-burger">
+                    <input id="menu__toggle" type="checkbox"/>
+                    <label class="menu__btn" for="menu__toggle">
+                        <span></span>
+                    </label>
+                    <div class="menu__box">
+                        <div class="header-gradient"></div>
+                        <ul>
+                            <li><p>Agenda</p></li>
+                            <span>
+                                <hr>
+                            </span>
+                            <li><img src="../assets/img/day.png" alt="Logo du jour"> <a class="menu__item"
+                                                                                        href="#">Jour</a></li>
+                            <li><img src="../assets/img/week.png" alt="Logo de la semaine"> <a class="menu__item"
+                                                                                               href="#">Semaine</a></li>
+                            <li><img src="../assets/img/month.png" alt="Logo du mois"> <a class="menu__item" href="#">Mois</a>
+                            </li>
+                            <span>
+                                <hr>
+                            </span>
+                            <li><p>Événements</p></li>
+                            <span>
+                                <hr>
+                            </span>
+                            <div>
+                                <div class="mobile-allCheck"><input type="checkbox">Tout</div>
+                                <div class="mobile-appointCheck"><input type="checkbox">Rendez-vous</div>
+                                <div class="mobile-birthCheck"><input type="checkbox">Anniversaires</div>
+                                <div class="mobile-reminderCheck"><input type="checkbox">Rappels</div>
+                            </div>
+                        </ul>
+                        <div class="button-mobile">
+                            <button id="">Appliquer les filtres</button>
+                        </div>
+                        </section>
+                    </div>
+                </div>
             </div>
 
             <div class="icon-website-phone">
@@ -23,21 +63,6 @@
             <div class="icon-website">
                 <img src="../assets/img/website.png" alt="Logo du site">
             </div>
-
-            <div class="dropdown-header-phone">
-                <div class="day">Septembre</div>
-
-                <div class="div-button">
-                    <button class="button-user"><img src="../assets/img/down-arrow.png">
-                    </button>
-                    <!-- <div class="dropdown-content-phone">
-                        <a href="#">Jour</a>
-                        <a href="#">Semaine</a>
-                        <a href="#">Mois</a>
-                    </div> -->
-                </div>
-            </div>
-
         </div>
 
         <div class="icon-right">
@@ -46,7 +71,7 @@
                 <div class="day">Jour</div>
 
                 <div class="div-button">
-                    <button class="button"><img src="../assets/img/down-arrow.png">
+                    <button class="button"><img src="../assets/img/down-arrow.png" alt="Logo d'une flèche">
                     </button>
                     <div class="dropdown-content">
                         <a href="#">Jour</a>
@@ -57,15 +82,16 @@
             </div>
 
 
-    <div class="logo-right">
+            <div class="logo-right">
                 <div class="icon-events"><a href="#openModal">
                         <button class="new" for="modal-content">
-                            <img src="../assets/img/events.png">
-                        </button></a>
+                            <img src="../assets/img/events.png" alt="Logo d'évenement">
+                        </button>
+                    </a>
                 </div>
 
                 <div id="openModal" class="modalDialog">
-                    <div>
+                    <div class="big-content">
                         <header>Créer un évènement</header>
                         <a href="#close" title="Fermer" class="close">X</a>
                         <div class="modal-content">
@@ -84,7 +110,7 @@
                                 </select>
                             </label>
                             <section class="date">
-                                <div><img src="/assets/img/clock.png">
+                                <div><img src="/assets/img/clock.png" alt="img d'une horloge">
                                     <input type="date" name="" value="2022-09-07" min="2022-01-01" max="2022-12-31">
                                 </div>
                                 <div class="centercheckbox">
@@ -97,7 +123,7 @@
                             </section>
                             <section class="reminder">
                                 <div>
-                                    <img src="/assets/img/add-user.png">
+                                    <img src="/assets/img/add-user.png" alt="Logo utilisateur">
                                     <button>Inviter des amis</button>
                                 </div>
                                 <div class="centercheckbox">
@@ -111,54 +137,55 @@
                                 </div>
                             </section>
                             <div class="description" placeholder="description">Ajoutez une description</div>
-                            <textarea name="" cols="60" rows="10"></textarea>
+                            <textarea style="width: 300px; height: 120px;"></textarea>
                             <button class="event">Enregistrer</button>
                         </div>
                     </div>
                 </div>
 
 
-                    <div class="icon-calendar"><a href="#openModal2">
-                            <button class="new" for="modal-content">
-                                <img src="../assets/img/calendar.png">
-                            </button></a>
-                    </div>
+                <div class="icon-calendar"><a href="#openModal2">
+                        <button class="new" for="modal-content2">
+                            <img src="../assets/img/calendar.png" alt="Logo calendrier">
+                        </button>
+                    </a>
+                </div>
 
-                    <div id="openModal2" class="modalDialog">
-                    <div>
+                <div id="openModal2" class="modalDialog">
+                    <div class="big-content">
                         <header>Créer un agenda</header>
                         <a href="#close" title="Fermer" class="close">X</a>
-                        <div class="modal-content">
+                        <div class="modal-content2">
                             <span>
                                 <hr>
                             </span>
-                        <title>Créer un agenda</title>
+                            <title>Créer un agenda</title>
                             <input type="text" placeholder="Nom de l'agenda" reset>
                             <br>
                             <div class="info-calendar">
-                                <section class="date">
+                                <section class="date2">
                                     <div class="invite-friend">
-                                        <img src="../assets/img/invite-friend.png">
+                                        <img src="../assets/img/invite-friend.png" alt="Logo invité un ami">
                                         <button>Inviter des amis</button>
                                     </div>
                                 </section>
                                 <section class="reminder2">
-                                    
+
                                     <div class="radio-button">
                                         <div>
-                                        <input type="radio" id="male" name="gender">
-                                        <label for="male">Public</label>
+                                            <input type="radio" id="male" name="gender">
+                                            <label for="male">Public</label>
                                         </div>
 
                                         <div class="radio-space">
-                                        <input type="radio" id="female" name="gender">
-                                        <label for="female">Private</label>
+                                            <input type="radio" id="female" name="gender">
+                                            <label for="female">Private</label>
                                         </div>
                                     </div>
                                 </section>
                             </div>
                             <div class="description" placeholder="description">Ajoutez une description</div>
-                            <textarea name="" cols="60" rows="10"></textarea>
+                            <textarea style="width: 300px; height: 120px;"></textarea>
                             <button class="event">Enregistrer</button>
                         </div>
                     </div>
@@ -177,6 +204,6 @@
     </div>
 </header>
 
-<body>
+
 </body>
 </html>
