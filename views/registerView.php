@@ -28,9 +28,9 @@
       <div class="registerTitle">
         <p>S'enregistrer</p>
       </div>
-      <span>
+      
         <hr />
-      </span>
+      
       <div class="registerForm">
         <form method="post" action="../models/registerModel.php">
           <input type="text" id="username" name="user" required="required" placeholder="Nom d'utilisateur" />

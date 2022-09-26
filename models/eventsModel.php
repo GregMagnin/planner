@@ -24,6 +24,7 @@ $queries = [
     "
 ];
 
+
 foreach ($queries as $query) {
     try {
         $statement = $connection->prepare($query);

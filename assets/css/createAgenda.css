@@ -11,22 +11,22 @@
   list-style: none;
 }
 
-.containerlogin {
-    width: 470px;
-    height: 400px;
+.containerAgenda {
+    width: 650px;
+    height: 550px;
     margin: auto;
     margin-top: 30px;
     border: solid black 2px;
     border-radius: 15px;
 }
-.loginBox {
-    width: 470px;
-    height: 380px;
+.agendaBox {
+    width: 600px;
+    height: 500px;
     margin: auto;   
     box-sizing: 2px solid black;
 }
 
-.loginTitle {
+.agendaTitle {
     display: flex;
     height: 100px;
     width: 466px;
@@ -39,15 +39,15 @@
     
 }
 
-.loginTitle p {
+.agendaTitle p {
     margin-bottom: 3%;
     text-decoration: underline;
 }
 
-hr {
+span {
     display: block;
     width: 99.2%;
-    border:solid black;
+    border: 2px solid black;
 }
 
 form { 
@@ -56,17 +56,22 @@ form {
     align-items: center;
     justify-content: space-between;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 input {
     border-radius: 10px;
     border: solid 2px black;
     width: 300px;
-    height: 50px;
+    height: 40px;
 }
 
 input[type="text"] {
+    font-size: 20px;
+    font-family: 'Josefin sans', sans-serif;
+}
+
+input[type="mail"] {
     font-size: 20px;
     font-family: 'Josefin sans', sans-serif;
 }
@@ -76,21 +81,20 @@ input[type="pass"] {
     font-family: 'Josefin sans', sans-serif;
 }
 
-
 ::placeholder {
     color: grey;
     font-family: 'Josefin sans', sans-serif;
     font-size: 20px;
+    text-align: center;
     
 }
 
-.loginForm p {
+.agendaForm {
     text-align: center;
     font-family: 'Josefin sans', sans-serif;
-    margin-top: 30px;
 }
 
-.loginForm a {
+.agendaForm a {
     text-decoration: underline;
 }
 
@@ -110,7 +114,15 @@ input[type="pass"] {
     height: 60px;
 }
 
-.submit {
-    margin-top: 10px;
+.alreadyagendaed {
+    margin-top: 8px;
+}
+
+.inviteButton {
+    margin-top: 25px;
+    margin-left: 10px;
+    width: 150px;
     background:linear-gradient(to right,rgba(0,0,0,0),#FE85C8 20%,#7CC0F3 80%);
 }
+
+

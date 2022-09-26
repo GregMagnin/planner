@@ -160,7 +160,9 @@
                                 <hr>
                             </span>
                             <title>Créer un agenda</title>
-                            <input type="text" placeholder="Nom de l'agenda" reset>
+                            <form action="../models/agendaModel.php" method="post">
+                            <input type="text" name="agendaName" placeholder="Nom de l'agenda"   reset>
+                            
                             <br>
                             <div class="info-calendar">
                                 <section class="date2">
@@ -173,20 +175,23 @@
 
                                     <div class="radio-button">
                                         <div>
-                                            <input type="radio" id="male" name="gender">
-                                            <label for="male">Public</label>
+                                            
+                                            <input type="radio" name="public">
+                                            <label for="public">Public</label>
                                         </div>
 
                                         <div class="radio-space">
-                                            <input type="radio" id="female" name="gender">
-                                            <label for="female">Private</label>
+                                            <input type="radio" name="private">
+                                            <label for="private">Privé</label>
+                                            </form>
                                         </div>
                                     </div>
                                 </section>
                             </div>
                             <div class="description" placeholder="description">Ajoutez une description</div>
-                            <textarea style="width: 300px; height: 120px;"></textarea>
-                            <button class="event">Enregistrer</button>
+                            <input name="agendaDescription" type="text" textarea style="width: 300px; height: 120px;"></textarea>
+                            <input type="submit" value="Enregistrer" class="event" name="submit">
+                            </form>
                         </div>
                     </div>
                 </div>

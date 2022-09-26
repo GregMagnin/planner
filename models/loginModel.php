@@ -65,15 +65,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             header("location: ../views/calendardayView.php");
                         } else{
                             // Password is not valid, display a generic error message
-                            $login_err = "Nom d'utilisateur ou mot de passe erroné.";
+                            header("location: ../views/errorView.php");
                         }
                     }
                 } else{
                     // username doesn't exist, display a generic error message
-                    $login_err = "Nom d'utilisateur ou mot de passe erroné..";
+                    header("location: ../views/errorView.php");
                 }
             } else{
-                echo "Quelque chose s'est mal passé (redirection)";
+                header("location: ../views/errorView.php");
             }
 
             // Close statement

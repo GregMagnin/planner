@@ -28,9 +28,7 @@
       <div class="loginTitle">
         <p>Se connecter</p>
       </div>
-      <span>
         <hr />
-      </span>
       <div class="loginForm">
         <form action="../models/loginModel.php" method="post">
           <input type="text" id="username" name="user" required="required" placeholder="Nom d'utilisateur"/>

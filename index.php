@@ -18,6 +18,12 @@
         case '/createagenda':
             require_once controllers('createAgenda');
             break;
+            case '/login':
+                require_once controllers('login');
+                break;
+                case '/header':
+                require_once controllers('header');
+                break;
         default:
         require_once controllers('error');
 }
