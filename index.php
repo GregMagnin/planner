@@ -1,17 +1,29 @@
 <?php
 
-require_once './helpers.php';
+ require_once 'helpers.php';
 
-switch (getUri()) {
-    case '/':
-        require_once controllers('home');
+ switch (getUri()) {
+     case '/':
+         require_once controllers('login');
         break;
-    case '/post':
-        require_once controllers('post');
+    case '/register':
+        require_once controllers('register');
         break;
-    case '/form':
-    require_once controllers('form');
+    case '/calendar':
+    require_once controllers('calendarDay');
     break;
+        case '/calendarweek':
+            require_once controllers('calendarWeek');
+            break;
+        case '/createagenda':
+            require_once controllers('createAgenda');
+            break;
+            case '/login':
+                require_once controllers('login');
+                break;
+                case '/header':
+                require_once controllers('header');
+                break;
         default:
         require_once controllers('error');
 }

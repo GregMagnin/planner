@@ -14,6 +14,10 @@ function views(string $name): string {
     return getPath('views') . $name . 'View.php';
 }
 
+function models(string $name): string {
+    return getPath('models') . $name . 'Model.php';
+}
+
 function getPath(string $type) : string {
     return  $GLOBALS['ROOT_DOCUMENT'] . DIRECTORY_SEPARATOR . $type . DIRECTORY_SEPARATOR;
 }

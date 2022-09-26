@@ -1,0 +1,791 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+button {
+        background: none repeat scroll 0 0 transparent;
+        border: medium none;
+        border-spacing: 0;
+        font-family: 'PT Sans Narrow',sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.42rem;
+        list-style: none outside none;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        text-decoration: none;
+        text-indent: 0;
+        outline: 0;
+        border: 0;
+}
+
+.header {
+    background-color: #7cc0f3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.header img {
+    height: 35px;
+}
+
+.header h1 {
+    font-size: 150%;
+}
+
+.icon-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 1%;
+    width: 300px;
+}
+
+.logo-right {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.dropdown-header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding-left: 2%;
+    margin-right: 5%;
+    height: 40px;
+    width: 150px;
+    cursor: pointer;
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 3%;
+    padding-left: 50%;
+    height: 40px;
+    cursor: pointer;
+    border: black solid 0;
+    box-shadow: -0.01em 0  black;
+}
+
+.user {
+background-image: url('../img/user.png');
+background-color: #7cc0f3;
+}
+
+.button img {
+    height: 20px;
+}
+  
+.dropdown-header:hover {
+    border-radius: 10px 10px 0 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    width:100%;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+.dropdown-content a:hover {background-color: #f1f1f1}
+  
+.dropdown-header:hover .dropdown-content {
+    display: block;
+}
+
+.modalDialog {
+    position: fixed;
+    top: 0.5vh;
+    right: 0.5vh;
+    bottom: 0.5vh;
+    left: 0.5vh;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.modalDialog .new {
+    color: black;
+}
+
+.modalDialog header {
+    background:linear-gradient(to right,rgba(0,0,0,0),#FE85C8 20%,#7CC0F3 80%) ;
+    align-items: baseline;
+    font-family: 'Lobster', sans-serif;
+    text-decoration: underline;
+    font-size: 50px;
+    border-radius: 10px 10px 0 0;
+    padding-bottom: 2%;
+}
+.menu__btn span {
+    display: block;
+    width: 100%;
+    border: 1px solid #FE85C8;
+}
+
+.menu__box span {
+    display: flex;
+    width: 100%;
+    border: 1px solid #7CC0F3;
+}
+
+.menu__box li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 65px;
+}
+
+.menu__box li p {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 25px;
+}
+
+.mobile-allCheck, .mobile-appointCheck, .mobile-birthCheck, .mobile-reminderCheck {
+    font-size: 20px;
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 65px;
+
+}
+
+.mobile-allCheck input[type="checkbox"] {
+    /* filter: invert(100%) hue-rotate(18deg) brightness(1.7); */
+    accent-color: blue;
+}
+
+.mobile-appointCheck input[type="checkbox"] {
+    accent-color: yellow;
+}
+
+.mobile-birthCheck input[type="checkbox"] {
+    accent-color: purple;
+}
+
+.mobile-reminderCheck input[type="checkbox"] {
+    accent-color: green;
+}
+
+.button-mobile {
+    text-align: center;
+    padding-top: 20px;
+}
+.button-mobile button{
+    height: 30px;
+    width: auto;
+    background: linear-gradient(to right,rgba(0,0,0,0),#ffbee2 20%,#7CC0F3 80%);
+    border-radius: 5px;
+    box-shadow: none;
+    border: solid 1px black;
+    padding: 0 5px 0 8px;
+    cursor: pointer;
+}
+
+.button-mobile button:hover {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+span {
+    display: block;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.modalDialog:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modalDialog>div {
+    width: fit-content;
+    height :auto;
+    position: relative;
+    background: rgba(255, 255, 255, 0.8);
+    border: solid black 2px;
+    border-radius: 10px;
+    margin: 10% auto;
+    text-align: center;
+    font-size: medium;
+}
+
+.close {
+    background: gray;
+    color: #FFFFFF;
+    line-height: 30px;
+    position: absolute;
+    right: 1vh;
+    top: 1vh;
+    text-align: center;
+    width: 30px;
+    font-weight: bold;
+    border-radius: 20%;
+    border: solid black 1px;
+    font-weight: bolder;
+}
+
+.close:hover {
+    background: #FE85C8;
+    color: rgb(64, 0, 0);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    border :solid 2px rgb(128, 0, 0);
+}
+
+input::placeholder {
+    text-align: center;
+  }
+.modal-content, .modal-content2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Josefin sans';
+}
+
+.reminder, .reminder2,
+.date, .date2{
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1% 20px 1% 20px;
+}
+
+.reminder2 {
+    padding-top: 20px;
+}
+
+.reminder>div,
+.reminder2>div,
+.date>div {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.modalDialog select,
+.modalDialog input,
+.modalDialog button{
+    border-radius: 5px;
+    box-shadow: none;
+    border: solid 1px black;
+    width: auto;
+    height: 24px;
+    padding: 0 5px 0 8px;
+}
+.modalDialog img{
+    width: auto;
+    height: 24px;
+}
+.modalDialog textarea{
+    border-radius: 5px;
+    border: solid 1px black;
+    width: auto;
+    margin-top: 1%;
+}
+
+.modal-content>input,
+.modal-content #category,
+.modal-content>button {
+    width: 300px;
+    height: 40px;
+    margin: 1% 0 1% 0;
+}
+
+.modal-content2>input,
+.modal-content2 #category,
+.modal-content2>button {
+    width: 300px;
+    height: 40px;
+    margin: 1% 0 1% 0;
+}
+
+#allday:checked + .day {
+    display: none;
+}
+
+.rappel {
+    display:none;
+}
+#reminder:checked + .rappel {
+    display: inline-block;
+}
+
+.modalDialog .date div {
+    display: flex;
+    flex-direction: row;
+}
+
+.modalDialog .date2 div {
+    display: flex;
+    flex-direction: row;
+}
+
+.centercheckbox {
+    position: absolute;
+    align-items: center;
+    left: 58%;
+    width: 40%;
+}
+
+.centercheckbox * {
+    margin: 0px 4% 0px 4%;
+}
+
+.date img,
+.date2 img,
+.reminder img,
+.reminder2 img {
+    margin-right: 10px;
+}
+
+.modalDialog button{
+    background:linear-gradient(to right,rgba(0,0,0,0),#FE85C8 20%,#7CC0F3 80%);
+}
+.modalDialog .event {
+font-size: large;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-left: 92px;
+background:linear-gradient(to right,rgba(0,0,0,0),#FE85C8 20%,#7CC0F3 80%);
+}
+.modalDialog button:hover{
+    background:linear-gradient(to right,rgba(0,0,0,0),#FE85C8 20%,#7CC0F3 80%);
+    color: black;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.event {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.info-calendar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 600px;
+}
+
+.invite-friend {
+    display: flex;
+    position: relative;
+    top: 30px;
+}
+
+.radio-button {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 80px;
+}
+
+.radio-space {
+    padding-top: 20px;
+}
+
+input[type="radio"]
+{
+  display: none;
+  appearance: none;
+}
+
+input[type="radio"] + label
+{
+  cursor: pointer;
+  position: relative;
+  padding-left: 30px;
+  line-height: 20px;
+}
+
+input[type="radio"] + label::before
+{
+  content: "";
+  display: inline-block;
+  width: 20px;
+  aspect-ratio: 1;
+  border: 1px solid #7CC0F3;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+input[type="radio"] + label::after
+{
+  content: "";
+  display: inline-block;
+  width: 10px;
+  aspect-ratio: 1;
+  border: 1px solid #7CC0F3;
+  background: #7CC0F3;
+  border-radius: 50%;
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+input[type="radio"]:checked + label::after
+{
+  opacity: 1;
+}
+
+
+.icon-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.day-week-month img {
+    height: 20px;
+}
+
+.icon-website img {
+    height: 64px;
+    cursor: pointer;
+}
+
+.icon-events {
+    margin: 2%;
+    cursor: pointer;
+}
+
+.icon-events img {
+    cursor: pointer;
+}
+
+.icon-calendar {
+    margin: 2%;
+    padding-left: 15%;
+}
+
+.icon-calendar img {
+    cursor: pointer;
+}
+
+.icon-user {
+    padding-top: 5px;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.icon-user img {
+    cursor: pointer;
+}
+
+select {
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: black solid 0;
+    outline: none;
+}
+
+option {
+    background-color: #ffffff;
+}
+  
+.opt {
+    margin-left: 2%;
+    height: 35px;
+}
+
+.icon-website-phone {
+    display: none;
+    align-items: center;
+    padding-top: 3px;
+    padding-left: 30px;
+}
+
+.icon-website-phone img {
+    height: 32px;
+}
+
+.icon-burger {
+    display: none;
+}
+
+.dropdown-header-phone {
+    position: relative;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding-left: 2%;
+    margin-right: 5%;
+    height: 40px;
+    width: 180px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.header-gradient {
+    position: absolute;
+    top:0;
+    height: 64px;
+    width: 138%;
+    background:linear-gradient(to right,#ffffff 20%,#FE85C8 50%,#7CC0F3 80%);
+}
+
+#menu__toggle {
+    opacity: 0;
+}
+#menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+}
+#menu__toggle:checked + .menu__btn > span::before {
+    top: 0;
+    opacity: 0;
+    transform: rotate(0deg);
+}
+#menu__toggle:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+    left: 0 !important;
+}
+.menu__btn {
+    position: fixed;
+    top: 32px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 5;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(#ffffff, #FE85C8);
+    transition-duration: .25s;
+}
+.menu__btn > span::before {
+    content: '';
+    top: -8px;
+}
+.menu__btn > span::after {
+    content: '';
+    top: 8px;
+}
+.menu__box {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -130%;
+    width: 300px;
+    height: 550px;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px darkgrey;
+    transition-duration: .25s;
+    z-index: 2;
+}
+.menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: .25s;
+}
+.menu__item:hover {
+    background-color: #CFD8DC;
+}
+
+@media screen and (max-width:680px) {
+    .big-content, .modal-content {
+        width: 450px;
+    }
+
+    .modal-content2 {
+        width: 450px;
+    }
+
+    .big-content header {
+        font-size: 30px;
+    }
+
+    .date, .reminder, .description {
+        width: 450px;
+        padding-left: 10px;
+    }
+
+    .date2, .reminder2 {
+        width: 450px;
+        padding-left: 70px;
+    }
+
+    .centercheckbox {
+        left: 200px;
+        padding-right: 10px;
+    }
+}
+
+@media screen and (max-width:600px){
+    .icon-website-phone {
+        display: flex;
+    }
+
+    .icon-website {
+        display: none;
+    }
+}
+
+@media screen and (max-width:485px) {
+    .big-content, .modal-content, .modal-content2 {
+        width: 300px;
+    }
+
+    .modal-content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+
+    .big-content header {
+        font-size: 20px;
+        height: 50px;
+    }
+
+    .big-content header p {
+        margin-top: 10px;
+    }
+
+    .date, .reminder, .description {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        height: 85px;
+        padding-top: 15px;
+        left: 10px;
+    }
+
+    .info-calendar {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .date2 {
+        margin-left: 90px;
+    }
+
+    .reminder2 {
+        margin-left: 90px;
+        padding-top: 50px;
+    }
+
+    .description {
+        padding-top: 25px;
+    }
+
+    .centercheckbox {
+        position: inherit;
+    }
+}
+
+@media screen and (max-width:400px) {
+
+    .dropdown-header-phone {
+        display: flex;
+        width: 100px;
+        font-size: 12px;
+    }
+    .icon-burger {
+        display: flex;
+    }
+
+    .icon-website {
+        display: none;
+    }
+
+    .dropdown-header {
+        display: none;
+    }
+
+    .dropdown-header-phone img {
+        display: flex;
+        margin-top: 2px;
+        margin-right: 5px;
+        height: 20px;
+        width: 20px;
+    }
+
+    .icon-right {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .menu__box {
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 340px) {
+    .header {
+        width: 100%;
+    }
+}
